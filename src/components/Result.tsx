@@ -24,7 +24,7 @@ export default function Result({
     <div
       className={`flex ${
         orientation == "horizontal" ? "flex-row" : "flex-col"
-      } text-card-foreground bg-card rounded-md overflow-hidden`}
+      } text-card-foreground bg-card rounded-md overflow-hidden min-h-full result-card`}
     >
       {tilePackLink(
         tilePack,
@@ -36,7 +36,7 @@ export default function Result({
           }`}
         />
       )}
-      <div className="p-4 flex flex-col gap-2">
+      <div className="card-content p-4 flex flex-col justify-between gap-2 flex-grow">
         {tilePackLink(
           tilePack,
           <h3 className="font-runescape text-primary text-2xl inline hover:underline">
@@ -45,10 +45,12 @@ export default function Result({
         )}
         <ul className="flex flex-wrap">
           <li>{tilePack.author.name}</li>
-          <li className="mx-2" role="presentation">&bull;</li>
+          <li className="mx-2" role="presentation">
+            &bull;
+          </li>
           <li>{formatNumber(tilePack.installCount)} installs</li>
         </ul>
-        <p className="">{tilePack.description}</p>
+        <p className="flex flex-grow">{tilePack.description}</p>
         <ul className="flex gap-2">
           {tilePack.tags.map((tag) => (
             <li key={tag.name}>
