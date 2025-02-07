@@ -1,10 +1,10 @@
 "use server";
 
-import { createClient } from "@/src/lib/supabase/server";
-import { generateNewId } from "@/src/lib/utils";
+import { createClient } from "@lib/supabase/server";
+import { generateNewId } from "@lib/utils";
 import { redirect } from "next/navigation";
-import { tilepackImagesBucketName } from "@/src/lib/constants";
-import { Tag } from "@/src/lib/types";
+import { tilepackImagesBucketName } from "@lib/constants";
+import { Tag } from "@lib/types";
 // import type Tile
 
 function slugifyTitle(title: string) {

@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Button } from "@/src/components/ui/button";
+import { Button } from "@components/ui/button";
 import {
   Form,
   FormControl,
@@ -11,15 +11,15 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/src/components/ui/form";
-import { Textarea } from "@/src/components/ui/textarea";
-import { Input } from "@/src/components/ui/input";
-import { Checkbox } from "@/src/components/ui/checkbox";
+} from "@components/ui/form";
+import { Textarea } from "@components/ui/textarea";
+import { Input } from "@components/ui/input";
+import { Checkbox } from "@components/ui/checkbox";
 import { uploadTilepack } from "./actions";
-import { createClient } from "@/src/lib/supabase/client";
-import { Badge } from "@/src/components/ui/badge";
-import type { Tag } from "@/src/lib/types";
-import { useEffect, useState } from "react";
+import { createClient } from "@lib/supabase/client";
+import { Badge } from "@components/ui/badge";
+import type { Tag } from "@lib/types";
+import { useState } from "react";
 import { X } from "lucide-react";
 
 // TODO: add real captcha (hCaptcha?) for anonymous users. all users?
@@ -77,7 +77,7 @@ const tilePackTileSchema = z
 
 async function fetchTags() {
   const supabase = createClient();
-  let { data: tags, error } = await supabase.from("tags").select("*");
+  const { data: tags } = await supabase.from("tags").select("*");
   return tags ?? [];
 }
 

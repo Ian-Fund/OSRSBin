@@ -1,7 +1,7 @@
 "use server";
 
-import Result from "@/src/components/Result";
-import { createClient } from "@/src/lib/supabase/server";
+import Result from "@components/Result";
+import { createClient } from "@lib/supabase/server";
 
 export default async function PopularSection() {
   const supabase = await createClient();

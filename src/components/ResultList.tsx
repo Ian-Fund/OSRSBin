@@ -1,5 +1,5 @@
-import type { TilepackWithTags } from "@/src/lib/types";
-import Result from "./Result";
+import type { TilepackWithTags } from "@lib/types";
+import Result from "@components/Result";
 
 export default function ResultList({ tilePacks }: { tilePacks: TilepackWithTags[] }) {
   if (tilePacks.length === 0) {

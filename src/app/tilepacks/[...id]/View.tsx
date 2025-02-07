@@ -1,15 +1,15 @@
 "use server";
 
 import { notFound } from "next/navigation";
-import TagBadge from "@/src/components/TagBadge";
+import TagBadge from "@components/TagBadge";
 import CopyButton from "./CopyButton";
-import { createClient } from "@/src/lib/supabase/server";
-import { randomInteger, formatNumber } from "@/src/lib/utils";
-import { tilepackImagesBucketName } from "@/src/lib/constants";
+import { createClient } from "@lib/supabase/server";
+import { randomInteger, formatNumber } from "@lib/utils";
+import { tilepackImagesBucketName } from "@lib/constants";
 
 async function getTilePackWithId(id: string) {
   const supabase = await createClient();
-  let { data: tilepacks, error } = await supabase
+  const { data: tilepacks, error } = await supabase
     .from("tilepacks")
     .select(
       `

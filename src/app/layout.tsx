@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./app.css";
-import { appName } from "@/src/lib/constants";
-import Header from "./_components/Header";
-import Footer from "./_components/Footer";
+import { appName } from "@lib/constants";
+import Header from "./Header";
+import Footer from "./Footer";
 import localFont from "next/font/local";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -20,7 +20,9 @@ const runescapeFont = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
   title: appName,
-  description: "OSRS Tile Packs for RuneLite...fill this in more",
+
+  // TODO: flesh this out more
+  description: "OSRS Tile Packs for RuneLite",
 };
 
 export default function RootLayout({

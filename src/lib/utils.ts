@@ -31,6 +31,7 @@ export function encodedRedirect(
 ) {
   return redirect(`${path}?${type}=${encodeURIComponent(message)}`);
 }
+
 // taken from https://github.com/CyberAP/nanoid-dictionary
 // > Numbers and english alphabet without lookalike
 const idAlphabet = "346789ABCDEFGHJKLMNPQRTUVWXYabcdefghijkmnpqrtwxyz";

@@ -1,4 +1,4 @@
-import { Badge } from "./ui/badge";
+import { Badge } from "@components/ui/badge";
 import Link from "next/link";
 
 export default function TagBadge({

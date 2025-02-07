@@ -1,11 +1,11 @@
 "use server";
 
-import { createClient } from "@/src/lib/supabase/server";
-import ResultList from "@/src/components/ResultList";
+import { createClient } from "@lib/supabase/server";
+import ResultList from "@components/ResultList";
 
 export default async function Tilepacks() {
   const supabase = await createClient();
-  let { data: tilePacks, error } = await supabase
+  const { data: tilePacks, error } = await supabase
     .from("tilepacks")
     .select("*, tags (*)");
 

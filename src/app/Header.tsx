@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { appName } from "@/src/lib/constants";
-import { type Tag } from "@/src/lib/types";
+import { appName } from "@lib/constants";
+import { type Tag } from "@lib/types";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,13 +9,13 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/src/components/ui/navigation-menu";
-import { cn } from "@/src/lib/utils";
+} from "@components/ui/navigation-menu";
+import { cn } from "@lib/utils";
 import * as React from "react";
 import { signOutAction } from "@/src/app/actions";
-import { Button } from "@/src/components/ui/button";
-import { createClient } from "@/src/lib/supabase/server";
-import Logo from "@/src/components/Logo";
+import { Button } from "@components/ui/button";
+import { createClient } from "@lib/supabase/server";
+import Logo from "@components/Logo";
 
 export default async function Header() {
   const supabase = await createClient();

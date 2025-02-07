@@ -1,5 +1,5 @@
-import ResultList from "@/src/components/ResultList";
-import { createClient } from "@/src/lib/supabase/server";
+import ResultList from "@components/ResultList";
+import { createClient } from "@lib/supabase/server";
 
 export default async function Tag({
   params,

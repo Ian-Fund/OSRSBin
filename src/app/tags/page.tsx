@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import React from "react";
-import { formatNumber } from "@/src/lib/utils";
-import { createClient } from "@/src/lib/supabase/server";
+import { formatNumber } from "@lib/utils";
+import { createClient } from "@lib/supabase/server";
 
 export default async function Tags() {
   const supabase = await createClient();

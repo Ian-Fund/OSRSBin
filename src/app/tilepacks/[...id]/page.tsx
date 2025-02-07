@@ -1,10 +1,10 @@
 import TilePack from "./View";
 import Upload from "./Upload";
-import { createClient } from "@/src/lib/supabase/server";
+import { createClient } from "@lib/supabase/server";
 
 async function fetchTags() {
   const supabase = await createClient();
-  let { data: tags, error } = await supabase.from("tags").select("*");
+  const { data: tags } = await supabase.from("tags").select("*");
   return tags ?? [];
 }
 

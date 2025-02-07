@@ -1,9 +1,9 @@
-import TagBadge from "./TagBadge";
+import TagBadge from "@components/TagBadge";
 import Link from "next/link";
-import type { TilepackWithTags, Tilepack } from "@/src/lib/types";
-import { createClient } from "@/src/lib/supabase/client";
-import { tilepackImagesBucketName } from "@/src/lib/constants";
-import { formatNumber, randomInteger } from "@/src/lib/utils";
+import type { TilepackWithTags, Tilepack } from "@lib/types";
+import { createClient } from "@lib/supabase/client";
+import { tilepackImagesBucketName } from "@lib/constants";
+import { formatNumber, randomInteger } from "@lib/utils";
 
 type Orientation = "horizontal" | "vertical";
 

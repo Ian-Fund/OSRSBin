@@ -1,4 +1,4 @@
-import { cn } from "@/src/lib/utils";
+import { cn } from "@lib/utils";
 
 export default function Logo(props: { className?: string }) {
   // make an svg
@@ -25,10 +25,12 @@ export default function Logo(props: { className?: string }) {
       className={cn(props.className)}
     >
       {/* red */}
-      {[
-        [0, 1],
-        [1, 1],
-      ].map(([x, y]) => {
+      {(
+        [
+          [0, 1],
+          [1, 1],
+        ] as [number, number][]
+      ).map(([x, y]) => {
         const { x: sx, y: sy } = squareOrigin(x, y);
         return (
           <rect
@@ -45,10 +47,12 @@ export default function Logo(props: { className?: string }) {
       })}
 
       {/* blue */}
-      {[
-        [2, 0],
-        [2, 1],
-      ].map(([x, y]) => {
+      {(
+        [
+          [2, 0],
+          [2, 1],
+        ] as [number, number][]
+      ).map(([x, y]) => {
         const { x: sx, y: sy } = squareOrigin(x, y);
         return (
           <rect
@@ -65,10 +69,12 @@ export default function Logo(props: { className?: string }) {
       })}
 
       {/* yellow */}
-      {[
-        [2, 2],
-        [3, 2],
-      ].map(([x, y]) => {
+      {(
+        [
+          [2, 2],
+          [3, 2],
+        ] as [number, number][]
+      ).map(([x, y]) => {
         const { x: sx, y: sy } = squareOrigin(x, y);
         return (
           <rect
@@ -85,10 +91,12 @@ export default function Logo(props: { className?: string }) {
       })}
 
       {/* green */}
-      {[
-        [1, 2],
-        [1, 3],
-      ].map(([x, y]) => {
+      {(
+        [
+          [1, 2],
+          [1, 3],
+        ] as [number, number][]
+      ).map(([x, y]) => {
         const { x: sx, y: sy } = squareOrigin(x, y);
         return (
           <rect

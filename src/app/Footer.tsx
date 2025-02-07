@@ -1,4 +1,4 @@
-import { appName } from "@/src/lib/constants";
+import { appName } from "@lib/constants";
 import React from "react";
 
 const siteAuthors = ["Comrade Fund", "Comrade Bits", "ComradeCosmo", "Tim"];
