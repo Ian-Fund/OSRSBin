@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./app.css";
+import "./global.css";
 import { appName } from "@lib/constants";
 import Header from "./Header";
 import Footer from "./Footer";

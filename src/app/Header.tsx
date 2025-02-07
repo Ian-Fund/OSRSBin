@@ -12,7 +12,7 @@ import {
 } from "@components/ui/navigation-menu";
 import { cn } from "@lib/utils";
 import * as React from "react";
-import { signOutAction } from "@/src/app/actions";
+import { signOutAction } from "@app/actions";
 import { Button } from "@components/ui/button";
 import { createClient } from "@lib/supabase/server";
 import Logo from "@components/Logo";

@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #11141b;
+  --color-foreground: #f1f5f9;
+
+  --color-primary: #fafd01;
+  --color-primary-foreground: var(--color-foreground);
+
+  --color-secondary: #1e40af;
+  --color-secondary-foreground: var(--color-foreground);
+
+  --color-header: #171d30;
+  --color-header-lighter: #2c3b62;
+
+  --color-card: #1d263c;
+  --color-card-foreground: var(--color-foreground);
+
+  --color-popover: #1d263c;
+  --color-popover-foreground: var(--color-foreground);
+
+  --color-accent: #171d30;
+  --color-accent-foreground: var(--color-foreground);
+
+  --color-input: #11141b;
+
+  --color-border: #94a3b8;
+
+  --color-destructive: var(--color-red-500);
+  --color-destructive-foreground: var(--color-foreground);
+
+  /* this looks wrong, but var(--font-runescape) is actually set by next in our
+  root layout, and we need to "re-set" it here to be picked up by tailwind*/
+  --font-runescape: var(--font-runescape);
+}
+
+:root {
+  @apply bg-background text-foreground antialiased;
+}
+
+/*
+v3 behavior, because shadcn expects it
+https://tailwindcss.com/docs/upgrade-guide#default-border-color
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-border, currentColor);
+  }
+}
