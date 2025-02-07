@@ -5,7 +5,7 @@ import { createClient } from "@lib/supabase/server";
 
 export default async function PopularSection() {
   const supabase = await createClient();
-  let { data: tilepacks, error } = await supabase
+  const { data: tilepacks, error } = await supabase
     .from("tilepacks")
     .select("*, tags (*)")
     .limit(3);
@@ -17,7 +17,7 @@ export default async function PopularSection() {
   return (
     <section className="mx-auto">
       <div className="text-center">
-        <h2 className="font-runescape text-6xl leading-[4.5rem] leading text-primary">
+        <h2 className="font-runescape text-6xl leading-[4.5rem]">
           Popular Packs
         </h2>
         <p>Check out what other people are&hellip; checking out!</p>

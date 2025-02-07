@@ -7,6 +7,7 @@ import { formatNumber, randomInteger } from "@lib/utils";
 
 type Orientation = "horizontal" | "vertical";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function tilePackLink(tilePack: Tilepack, children: React.ReactNode) {
   return (
     <Link
@@ -59,7 +60,7 @@ async function getVertical({
           className="object-cover min-h-48 h-48"
         />
         <div className="p-4 flex flex-col gap-2 justify-stretch">
-          <h3 className="font-runescape text-primary text-2xl inline hover:underline">
+          <h3 className="font-runescape text-2xl inline hover:underline">
             {tilePack.name}
           </h3>
           <ul className="flex flex-wrap">
@@ -110,7 +111,7 @@ async function getHorizontal({
           className= "object-cover min-w-64 w-64 h-96 min-h-96"
         />
         <div className="p-4 flex flex-col gap-2 justify-stretch">
-          <h3 className="font-runescape text-primary text-2xl inline hover:underline">
+          <h3 className="font-runescape text-2xl inline hover:underline">
             {tilePack.name}
           </h3>
           <ul className="flex flex-wrap">

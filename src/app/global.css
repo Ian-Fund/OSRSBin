@@ -4,11 +4,13 @@
   --color-background: #11141b;
   --color-foreground: #f1f5f9;
 
-  --color-primary: #fafd01;
+  --color-primary: #1e40af;
   --color-primary-foreground: var(--color-foreground);
 
-  --color-secondary: #1e40af;
-  --color-secondary-foreground: var(--color-foreground);
+  --color-secondary: #fafd01;
+  --color-secondary-foreground: var(--color-background);
+
+  --color-heading: #fafd01;
 
   --color-header: #171d30;
   --color-header-lighter: #2c3b62;
@@ -32,6 +34,19 @@
   /* this looks wrong, but var(--font-runescape) is actually set by next in our
   root layout, and we need to "re-set" it here to be picked up by tailwind*/
   --font-runescape: var(--font-runescape);
+
+  /* upload button */
+  --shadow-secondary-behind-sm: 0 0 10px 3px var(--color-secondary);
+  --shadow-secondary-behind-md: 0 0 10px 6px var(--color-secondary);
+  --shadow-secondary-behind-lg: 0 0 10px 10px var(--color-secondary);
+}
+
+@theme {
+  /* just use these breakpoints */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
 }
 
 :root {
@@ -43,11 +58,12 @@ v3 behavior, because shadcn expects it
 https://tailwindcss.com/docs/upgrade-guide#default-border-color
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-border, currentColor);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-heading;
   }
 }

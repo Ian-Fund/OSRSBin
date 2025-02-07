@@ -34,7 +34,7 @@ export default async function Tag({
 
   return (
     <div>
-      <h1 className="font-runescape text-6xl text-primary">{slug}</h1>
+      <h1 className="font-runescape text-6xl">{slug}</h1>
 
       <ResultList tilePacks={fullTilePacks} />
     </div>

@@ -22,11 +22,13 @@ export default async function Tags() {
     notFound();
   }
 
-  const tags = data.sort((a, b) => b.tilepacks[0].count - a.tilepacks[0].count);
+  const tags = data.sort(
+    (a, b) => b.tilepacks[0]!.count - a.tilepacks[0]!.count
+  );
 
   return (
     <div>
-      <h1 className="font-runescape text-6xl text-primary">Tags</h1>
+      <h1 className="font-runescape text-6xl">Tags</h1>
       <ul className="list-disc list-inside">
         {Array.from(tags).map((tag) => (
           <li key={tag.id}>
@@ -37,7 +39,7 @@ export default async function Tags() {
               {tag.name}
             </Link>
             <span className="italic ms-2">
-              ({formatNumber(tag.tilepacks[0].count)} packs)
+              ({formatNumber(tag.tilepacks[0]!.count)} packs)
             </span>
           </li>
         ))}

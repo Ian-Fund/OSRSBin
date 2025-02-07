@@ -8,9 +8,7 @@ export default function TagBadge({
 }) {
   return (
     <Link href={`/tags/${tag.slug}`}>
-      <Badge variant="secondary" size="sm">
-        {tag.name}
-      </Badge>
+      <Badge size="sm">{tag.name}</Badge>
     </Link>
   );
 }

@@ -1,5 +1,5 @@
 import { signUpAction } from "@app/actions";
-import { FormMessage, Message } from "@components/FormMessage";
+import { FormMessage, type Message } from "@components/FormMessage";
 import { SubmitButton } from "@components/SubmitButton";
 import { Input } from "@components/ui/input";
 import Link from "next/link";
@@ -22,7 +22,7 @@ export default async function Signup(props: {
         <h1 className="text-2xl font-medium">Sign up</h1>
         <p className="text-sm text text-foreground">
           Already have an account?{" "}
-          <Link className="text-primary font-medium underline" href="/sign-in">
+          <Link className="text-secondary font-medium underline" href="/sign-in">
             Sign in
           </Link>
         </p>

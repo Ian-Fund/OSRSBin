@@ -9,7 +9,7 @@ export default function SearchSection() {
 
   return (
     <section className="text-center">
-      <h2 className="font-runescape text-6xl leading-[4.5rem] leading text-primary">
+      <h2 className="font-runescape text-6xl leading-[4.5rem]">
         Search Tile Packs
       </h2>
       <p className="">Browse tile packs uploaded by users just like you!</p>

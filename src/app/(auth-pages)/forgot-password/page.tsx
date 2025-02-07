@@ -1,5 +1,5 @@
 import { forgotPasswordAction } from "@app/actions";
-import { FormMessage, Message } from "@components/FormMessage";
+import { FormMessage, type Message } from "@components/FormMessage";
 import { SubmitButton } from "@components/SubmitButton";
 import { Input } from "@components/ui/input";
 import Link from "next/link";
@@ -15,7 +15,7 @@ export default async function ForgotPassword(props: {
           <h1 className="text-2xl font-medium">Reset Password</h1>
           <p className="text-sm text-secondary-foreground">
             Already have an account?{" "}
-            <Link className="text-primary underline" href="/sign-in">
+            <Link className="text-secondary underline" href="/sign-in">
               Sign in
             </Link>
           </p>

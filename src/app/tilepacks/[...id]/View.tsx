@@ -52,7 +52,7 @@ export default async function TilePack({ id }: { id: string }) {
   // TODO load image from storage, load tags from tags table, etc
   return (
     <div className="grid grid-flow-row gap-4">
-      <h1 className="font-runescape text-6xl text-primary">{tilePack.name}</h1>
+      <h1 className="font-runescape text-6xl">{tilePack.name}</h1>
 
       <h2 className="sr-only">Data</h2>
       <CopyButton text={tilePack.data}>
@@ -76,15 +76,15 @@ export default async function TilePack({ id }: { id: string }) {
         </li>
         <li>
           <span className="font-runescape text-2xl">Installs</span>:{" "}
-          {formatNumber(installCount)}
+          {formatNumber(installCount!)}
         </li>
         <li>
           <span className="font-runescape text-2xl">Views</span>:{" "}
-          {formatNumber(viewCount)}
+          {formatNumber(viewCount!)}
         </li>
         <li>
           <span className="font-runescape text-2xl">Favorites</span>:{" "}
-          {formatNumber(favoriteCount)}
+          {formatNumber(favoriteCount!)}
         </li>
       </ul>
 

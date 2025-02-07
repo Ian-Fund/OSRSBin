@@ -3,7 +3,7 @@ import React from "react";
 export default function Help() {
   return (
     <div>
-      <h1 className="text-6xl font-runescape text-primary">Help</h1>
+      <h1 className="text-6xl font-runescape">Help</h1>
 
       <div className="space-y-4">
         <p>

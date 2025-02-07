@@ -52,7 +52,7 @@ export default async function Header() {
               <span>{appName}</span>
             </Link>
           </div>
-          <ul className="flex gap-8 text-3xl text-primary">
+          <ul className="flex gap-8 text-3xl text-heading">
             <li>
               <Link href="/help">Help</Link>
             </li>
@@ -67,7 +67,7 @@ export default async function Header() {
               </div>
             ) : (
               <div className="flex gap-2">
-                <Button asChild variant={"outline"}>
+                <Button asChild variant="outline">
                   <Link href="/sign-in">Sign in</Link>
                 </Button>
                 <Button asChild>
@@ -81,7 +81,7 @@ export default async function Header() {
       <div className="bg-header-lighter">
         <nav className="container mx-auto text-2xl px-8">
           <ul className="flex gap-4 items-center">
-            <li className="uppercase px-12 py-1 border-primary border-2">
+            <li className="uppercase px-12 py-1 border-secondary border-2">
               <Link href="/tilepacks/upload">Upload</Link>
             </li>
             <NavigationMenu>
@@ -126,7 +126,7 @@ export default async function Header() {
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+>(({ className, title, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>

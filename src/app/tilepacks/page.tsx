@@ -15,7 +15,7 @@ export default async function Tilepacks() {
 
   return (
     <div>
-      <h1 className="font-runescape text-6xl text-primary">Tile Packs</h1>
+      <h1 className="font-runescape text-6xl">Tile Packs</h1>
       <ResultList tilePacks={tilePacks ?? []} />
     </div>
   );

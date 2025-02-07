@@ -16,7 +16,6 @@ import { Textarea } from "@components/ui/textarea";
 import { Input } from "@components/ui/input";
 import { Checkbox } from "@components/ui/checkbox";
 import { uploadTilepack } from "./actions";
-import { createClient } from "@lib/supabase/client";
 import { Badge } from "@components/ui/badge";
 import type { Tag } from "@lib/types";
 import { useState } from "react";
@@ -75,12 +74,6 @@ const tilePackTileSchema = z
   .min(1)
   .max(200);
 
-async function fetchTags() {
-  const supabase = createClient();
-  const { data: tags } = await supabase.from("tags").select("*");
-  return tags ?? [];
-}
-
 export default function Upload({ allTags }: Readonly<{ allTags: Tag[] }>) {
   const form = useForm<UploadFormSchema>({
     resolver: zodResolver(uploadFormSchema),
@@ -98,7 +91,7 @@ export default function Upload({ allTags }: Readonly<{ allTags: Tag[] }>) {
     formData.append("name", values.name);
     formData.append("description", values.description);
     formData.append("tiles", JSON.stringify(values.tiles));
-    formData.append("image", values.image[0]);
+    formData.append("image", values.image[0]!);
     formData.append(
       "tags",
       JSON.stringify(values.tags.map((tag) => tagsByName.get(tag)!))
@@ -127,7 +120,7 @@ export default function Upload({ allTags }: Readonly<{ allTags: Tag[] }>) {
 
   return (
     <Form {...form}>
-      <h1 className="font-runescape text-6xl text-primary">Upload Tilepack</h1>
+      <h1 className="font-runescape text-6xl">Upload Tilepack</h1>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
           control={form.control}
@@ -202,16 +195,14 @@ export default function Upload({ allTags }: Readonly<{ allTags: Tag[] }>) {
           control={form.control}
           name="captcha"
           render={({ field }) => (
-            <FormItem className="flex flex-row gap-4 items-center">
+            <FormItem className="flex flex-row gap-4">
               <FormControl>
                 <Checkbox
                   checked={field.value}
                   onCheckedChange={field.onChange}
                 />
               </FormControl>
-              <div className="space-y-1 leading-none">
-                <FormLabel>Captcha</FormLabel>
-              </div>
+              <FormLabel>Captcha</FormLabel>
               <FormMessage />
             </FormItem>
           )}
