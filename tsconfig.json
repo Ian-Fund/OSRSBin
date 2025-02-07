@@ -8,7 +8,6 @@
     "esModuleInterop": true,
     "module": "esnext",
 
-    // target was omitted in default config. if things break, remove this line
     "target": "esnext",
 
     "moduleResolution": "bundler",
@@ -23,7 +22,10 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["*"],
+      "@/*": ["src/*"],
+      "@app/*": ["src/app/*"],
+      "@components/*": ["src/components/*"],
+      "@lib/*": ["src/lib/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
