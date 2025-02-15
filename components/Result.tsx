@@ -23,22 +23,16 @@ export default async function Result({
 }: Readonly<{
   tilePack: TilepackWithTags;
   orientation?: Orientation;
-}>)  {
+}>) {
   if (orientation === "horizontal") {
-  return getHorizontal({ tilePack });
-  } else { 
-  return getVertical({ tilePack });
+    return getHorizontal({ tilePack });
+  } else {
+    return getVertical({ tilePack });
   }
 }
 
-
-async function getVertical({
-  tilePack,
-  
-}: {
-  tilePack: TilepackWithTags;
-  
-}) {  const supabase = createClient();
+async function getVertical({ tilePack }: { tilePack: TilepackWithTags }) {
+  const supabase = createClient();
   const {
     data: { publicUrl: imageUrl },
   } = supabase.storage
@@ -50,9 +44,7 @@ async function getVertical({
       href={`/tilepacks/${tilePack.public_id}/${tilePack.slug}`}
       legacyBehavior
     >
-      <div
-        className="flex flex-col text-card-foreground bg-card rounded-md overflow-hidden h-full cursor-pointer"
-      >
+      <div className="flex flex-col text-card-foreground bg-card rounded-md overflow-hidden h-full cursor-pointer">
         <img
           src={imageUrl}
           alt={tilePack.name}
@@ -63,7 +55,7 @@ async function getVertical({
             {tilePack.name}
           </h3>
           <ul className="flex flex-wrap">
-            <li>{tilePack.author_id}</li>
+            <li>{tilePack.profiles?.display_name ?? "Anonymous"}</li>
             <li className="mx-2" role="presentation">
               &bull;
             </li>
@@ -80,41 +72,35 @@ async function getVertical({
         </div>
       </div>
     </Link>
-  ); }
+  );
+}
 
-async function getHorizontal({
-  tilePack,
-  
-}: {
-  tilePack: TilepackWithTags;
-  
-}) {
+async function getHorizontal({ tilePack }: { tilePack: TilepackWithTags }) {
   const supabase = createClient();
   const {
     data: { publicUrl: imageUrl },
   } = supabase.storage
     .from(tilepackImagesBucketName)
     .getPublicUrl(tilePack.image_name);
+  console.log(tilePack);
 
   return (
     <Link
       href={`/tilepacks/${tilePack.public_id}/${tilePack.slug}`}
       legacyBehavior
     >
-      <div
-        className="flex flex-row text-card-foreground bg-card rounded-md overflow-hidden h-full cursor-pointer"
-      >
+      <div className="flex flex-row text-card-foreground bg-card rounded-md overflow-hidden h-full cursor-pointer">
         <img
           src={imageUrl}
           alt={tilePack.name}
-          className= "object-cover min-w-64 w-64 h-96 min-h-96"
+          className="object-cover min-w-64 w-64 h-96 min-h-96"
         />
         <div className="p-4 flex flex-col gap-2 justify-stretch">
           <h3 className="font-runescape text-primary text-2xl inline hover:underline">
             {tilePack.name}
           </h3>
           <ul className="flex flex-wrap">
-            <li>{tilePack.author_id}</li>
+            <li>{tilePack.profiles?.display_name ?? "Anonymous"}</li>
             <li className="mx-2" role="presentation">
               &bull;
             </li>

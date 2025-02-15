@@ -7,7 +7,7 @@ export default async function Tilepacks() {
   const supabase = await createClient();
   let { data: tilePacks, error } = await supabase
     .from("tilepacks")
-    .select("*, tags (*)");
+    .select("*, tags (*), profiles (*)");
 
   if (error) {
     throw error;

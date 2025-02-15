@@ -7,7 +7,7 @@ export default async function PopularSection() {
   const supabase = await createClient();
   let { data: tilepacks, error } = await supabase
     .from("tilepacks")
-    .select("*, tags (*)")
+    .select("*, tags (*), profiles (*)")
     .limit(3);
 
   if (error) {

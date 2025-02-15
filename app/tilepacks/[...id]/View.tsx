@@ -20,7 +20,7 @@ async function getTilePackWithId(id: string) {
           name,
           slug
         )
-      )
+      ), profiles (*)
     `
     )
     .eq("public_id", id)
@@ -72,7 +72,7 @@ export default async function TilePack({ id }: { id: string }) {
       <ul>
         <li>
           <span className="font-runescape text-2xl">Author</span>:{" "}
-          {tilePack.author_id}
+          {tilePack.profiles?.display_name ?? "Anonymous"}
         </li>
         <li>
           <span className="font-runescape text-2xl">Installs</span>:{" "}

@@ -25,7 +25,7 @@ export default async function Tag({
   // now, run another query, but get the full tags
   const { data: fullTilePacks, error: fullError } = await supabase
     .from("tilepacks")
-    .select(`*, tags (*)`)
+    .select(`*, tags (*), profiles (*)`)
     .in("id", tilePackIds);
 
   if (fullError) {
